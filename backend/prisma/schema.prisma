@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum DeliveryStatus {
+  UNASSIGNED
+  ASSIGNED
+  IN_PROGRESS
+  DELIVERED
+  FAILED
+}
+
+model Dispatcher {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  routes       Route[]
+}
+
+model Driver {
+  id            String   @id @default(uuid())
+  name          String
+  dotMxNumber   String   @unique
+  status        String   @default("UNASSIGNED")
+  routes        Route[]
+}
+
+model Route {
+  id           String      @id @default(uuid())
+  date         DateTime    @default(now())
+  isLocked     Boolean     @default(false)
+  dispatcherId String
+  dispatcher   Dispatcher  @relation(fields: [dispatcherId], references: [id])
+  driverId     String?
+  driver       Driver?     @relation(fields: [driverId], references: [id])
+  deliveries   Delivery[]
+}
+
+model Delivery {
+  id                String         @id @default(uuid())
+  destName          String
+  destAddress       String
+  lat               Float
+  lng               Float
+  weight            Float
+  status            DeliveryStatus @default(UNASSIGNED)
+  routeId           String?
+  route             Route?         @relation(fields: [routeId], references: [id])
+  createdAt         DateTime       @default(now())
+  failureReason     String?
+}
