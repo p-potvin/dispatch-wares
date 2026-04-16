@@ -8,7 +8,7 @@ import { formatTime, getInitials } from '../../utils/formatters';
 
 export default function ChatPanel() {
   const dispatch = useDispatch();
-  const { channels, messages, activeChannelId, onlineUsers } = useSelector((s) => s.chat);
+  const { channels, messages, activeChannelId } = useSelector((s) => s.chat);
   const { user } = useSelector((s) => s.auth);
   const { sendChatMessage } = useSocket();
   const [text, setText] = useState('');
