@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd frontend/react-src && npm install && npm run build",
+  "outputDirectory": "frontend/react-src/build",
+  "installCommand": "echo 'skipping root install'"
+}
