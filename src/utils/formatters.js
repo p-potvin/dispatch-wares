@@ -1,0 +1,1 @@
+export const formatDateTime = () => ''; export const formatTime = () => ''; export const getInitials = (name) => name ? name.substring(0, 2).toUpperCase() : ''; export const formatRelative = () => '';
