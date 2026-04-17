@@ -24,10 +24,10 @@ export default function Sidebar() {
     <motion.aside
       initial={{ x: -80, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      className="w-16 bg-slate-900 border-r border-slate-800 flex flex-col items-center py-4 gap-2 z-30"
+      className="w-16 bg-vault-base border-r border-slate-800 flex flex-col items-center py-4 gap-2 z-30"
     >
-      <div className="mb-4 flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40">
-        <Zap className="w-5 h-5 text-emerald-400" />
+      <div className="mb-4 flex items-center justify-center w-10 h-10 rounded-xl bg-vault-green/20 border border-emerald-500/40">
+        <Zap className="w-5 h-5 text-vault-green" />
       </div>
       {NAV.map(({ to, icon: Icon, label }) => (
         <NavLink
@@ -38,12 +38,12 @@ export default function Sidebar() {
           className={({ isActive }) =>
             `flex items-center justify-center w-10 h-10 rounded-xl transition-all duration-200 group relative ` +
             (isActive
-              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
-              : 'text-slate-500 hover:text-slate-200 hover:bg-slate-800')
+              ? 'bg-vault-green/20 text-vault-green border border-emerald-500/40'
+              : 'text-slate-500 hover:text-vault-light hover:bg-vault-slate')
           }
         >
           <Icon className="w-5 h-5" />
-          <span className="absolute left-14 bg-slate-800 border border-slate-700 text-slate-200 text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-50 transition-opacity">
+          <span className="absolute left-14 bg-vault-slate border border-slate-700 text-vault-light text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 pointer-events-none whitespace-nowrap z-50 transition-opacity">
             {label}
           </span>
         </NavLink>

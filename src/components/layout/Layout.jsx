@@ -7,7 +7,7 @@ import { useSocket } from '../../hooks/useSocket';
 export default function Layout() {
   useSocket();
   return (
-    <div className="flex h-screen bg-slate-950 text-slate-200 overflow-hidden">
+    <div className="flex h-screen bg-slate-950 text-vault-light overflow-hidden">
       <Sidebar />
       <div className="flex flex-col flex-1 min-w-0">
         <TopBar />

@@ -23,15 +23,15 @@ export default function JobCard({ job, routeId }) {
     <div ref={setNodeRef} style={style} {...attributes}>
       <motion.div
         layout
-        className={`job-card group hover:border-emerald-500/40 hover:bg-slate-700/80 transition-all duration-150 ${isDragging ? 'shadow-2xl shadow-emerald-500/20 border-emerald-500/40' : ''}`}
+        className={`job-card group hover:border-emerald-500/40 hover:bg-vault-slate transition-all duration-150 ${isDragging ? 'shadow-2xl shadow-emerald-500/20 border-emerald-500/40' : ''}`}
       >
         <div className="flex items-start gap-2">
-          <div {...listeners} className="mt-0.5 text-slate-600 hover:text-slate-400 cursor-grab active:cursor-grabbing shrink-0">
+          <div {...listeners} className="mt-0.5 text-slate-600 hover:text-vault-light/70 cursor-grab active:cursor-grabbing shrink-0">
             <GripVertical className="w-3.5 h-3.5" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2 mb-1.5">
-              <p className="text-sm font-medium text-slate-200 leading-tight">{truncate(job.destName || job.name, 24)}</p>
+              <p className="text-sm font-medium text-vault-light leading-tight">{truncate(job.destName || job.name, 24)}</p>
               {job.priority && (
                 <span className={`badge text-xs shrink-0 ${PRIORITY_COLORS[job.priority] || PRIORITY_COLORS.STANDARD}`}>
                   {job.priority === 'URGENT' && <AlertTriangle className="w-2.5 h-2.5" />}

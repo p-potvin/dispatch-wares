@@ -14,18 +14,18 @@ export default function NotificationsPanel() {
       initial={{ opacity: 0, y: -8, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -8, scale: 0.97 }}
-      className="absolute top-14 right-4 w-80 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden"
+      className="absolute top-14 right-4 w-80 bg-vault-base border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden"
     >
       <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
-        <div className="flex items-center gap-2 text-sm font-semibold text-slate-200">
+        <div className="flex items-center gap-2 text-sm font-semibold text-vault-light">
           <Bell className="w-4 h-4 text-amber-400" />
           Notifications
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => dispatch(markAllRead())} className="text-xs text-slate-400 hover:text-emerald-400 flex items-center gap-1">
+          <button onClick={() => dispatch(markAllRead())} className="text-xs text-vault-light/70 hover:text-vault-green flex items-center gap-1">
             <CheckCheck className="w-3 h-3" /> All read
           </button>
-          <button onClick={() => dispatch(toggleNotifications())} className="text-slate-500 hover:text-slate-200">
+          <button onClick={() => dispatch(toggleNotifications())} className="text-slate-500 hover:text-vault-light">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -37,14 +37,14 @@ export default function NotificationsPanel() {
           items.slice(0, 20).map((n) => (
             <div
               key={n.id}
-              className={`px-4 py-3 border-b border-slate-800/50 flex items-start gap-3 hover:bg-slate-800/40 transition-colors ${!n.read ? 'bg-slate-800/20' : ''}`}
+              className={`px-4 py-3 border-b border-slate-800/50 flex items-start gap-3 hover:bg-vault-slate/40 transition-colors ${!n.read ? 'bg-vault-slate/20' : ''}`}
             >
-              <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${!n.read ? 'bg-emerald-400' : 'bg-slate-600'}`} />
+              <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${!n.read ? 'bg-vault-green/80' : 'bg-slate-600'}`} />
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-slate-200">{n.message}</p>
+                <p className="text-sm text-vault-light">{n.message}</p>
                 <p className="text-xs text-slate-500 mt-0.5">{formatRelative(n.createdAt)}</p>
               </div>
-              <button onClick={() => dispatch(dismissNotification(n.id))} className="text-slate-600 hover:text-slate-300">
+              <button onClick={() => dispatch(dismissNotification(n.id))} className="text-slate-600 hover:text-vault-light">
                 <X className="w-3 h-3" />
               </button>
             </div>
