@@ -1,1 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit'; const uiSlice = createSlice({ name: 'ui', initialState: { sidebarOpen: false, chatOpen: false, notificationsOpen: false, selectedDate: new Date().toISOString() }, reducers: { toggleSidebar: s => { s.sidebarOpen = !s.sidebarOpen; }, toggleChat: s => { s.chatOpen = !s.chatOpen; }, toggleNotifications: s => { s.notificationsOpen = !s.notificationsOpen; }, setSelectedDate: (s, action) => { s.selectedDate = action.payload; } } }); export const { toggleSidebar, toggleChat, toggleNotifications, setSelectedDate } = uiSlice.actions; export default uiSlice.reducer;
+import { createSlice } from '@reduxjs/toolkit';
+import { format } from 'date-fns';
+
+const uiSlice = createSlice({
+  name: 'ui',
+  initialState: {
+    selectedDate: format(new Date(), 'yyyy-MM-dd'),
+  },
+  reducers: {
+    setSelectedDate(state, action) {
+      state.selectedDate = action.payload;
+    },
+  },
+});
+
+export const { setSelectedDate } = uiSlice.actions;
+export default uiSlice.reducer;
