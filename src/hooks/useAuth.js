@@ -1,0 +1,1 @@
+import { useSelector, useDispatch } from 'react-redux'; import { setUser } from '../store/slices/authSlice'; export const useAuth = () => { const dispatch = useDispatch(); const auth = useSelector(s => s.auth); return { login: (data) => { dispatch(setUser(data)); }, loading: false, error: null, ...auth }; };

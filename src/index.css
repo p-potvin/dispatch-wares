@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #002B36;
+    color: #FDF6E3;
+    font-family: "Segoe UI Semilight", "Segoe UI", Inter, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #002B36;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4A5459;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #21B8CC;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  .glass-card {
+    @apply bg-vault-base/60 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+  .btn-primary {
+    @apply bg-vault-cyan hover:bg-vault-cyan/80 text-vault-base font-semibold px-4 py-2 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  .btn-ghost {
+    @apply glass hover:bg-white/20 text-vault-light px-4 py-2 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  .input-field {
+    @apply bg-vault-slate border border-vault-slate focus:border-vault-cyan focus:ring-1 focus:ring-vault-cyan/50 rounded-lg px-3 py-2 text-vault-light placeholder-vault-light/50 outline-none transition-all duration-200 w-full;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .route-column {
+    @apply flex flex-col w-72 min-w-[18rem] bg-vault-base/80 border border-white/10 rounded-xl overflow-hidden flex-shrink-0;
+  }
+  .job-card {
+    @apply bg-vault-slate/80 border border-white/10 rounded-lg p-3 cursor-grab active:cursor-grabbing select-none;
+  }
+}
