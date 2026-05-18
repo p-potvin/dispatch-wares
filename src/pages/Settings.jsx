@@ -55,7 +55,7 @@ export default function Settings() {
               className="input-field"
               value={form.companyName || ''}
               onChange={(e) => setForm((f) => ({ ...f, companyName: e.target.value }))}
-              placeholder="DispatchWares Co."
+              placeholder="Dispatch Co."
             />
           </div>
           <div>

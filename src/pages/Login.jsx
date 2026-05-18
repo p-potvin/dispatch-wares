@@ -29,7 +29,7 @@ export default function Login() {
             <div className="w-14 h-14 rounded-2xl bg-vault-green/20 border border-vault-green/40 flex items-center justify-center mb-4">
               <Zap className="w-7 h-7 text-vault-green" />
             </div>
-            <h1 className="text-2xl font-bold text-slate-100">DispatchWares</h1>
+            <h1 className="text-2xl font-bold text-slate-100">VaultWares Dispatch</h1>
             <p className="text-slate-500 text-sm mt-1">Sign in to your dispatcher account</p>
           </div>
 

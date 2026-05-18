@@ -1,4 +1,4 @@
-cd "dispatch-wares"
+cd "vaultwares-dispatch"
 
 # Initialize Git
 git init
@@ -12,7 +12,7 @@ New-Item -ItemType Directory -Path "frontend/src/api", "frontend/src/components/
 
 # Create a placeholder README
 "
-# DispatchWares
+# VaultWares Dispatch
 VaultWares Cybersecurity-first Truck Dispatching Dashboard.
 - React/Tailwind Frontend
 - Node.js/Prisma/PostgreSQL Backend
@@ -23,7 +23,7 @@ VaultWares Cybersecurity-first Truck Dispatching Dashboard.
 Write-Host "`nProject structure created! To push to your GitHub, run:" -ForegroundColor Green
 Write-Host "1. git add ."
 Write-Host "2. git commit -m 'Initial setup of VaultWares Dispatch'"
-Write-Host "3. git remote add origin https://github.com/p-potvin/dispatch-wares.git"
+Write-Host "3. git remote add origin https://github.com/p-potvin/vaultwares-dispatch.git"
 Write-Host "4. git push -u origin main"
 
 DATABASE_URL="prisma+postgres://clopeux:123Exastkill6!@localhost:5432/dispatch_wares?schema=public"

@@ -1,4 +1,4 @@
-# dispatch-wares
+# vaultwares-dispatch
 
 > For company-wide rules, read `vaultwares-docs/AGENTS.md` first.
 
